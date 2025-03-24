@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let livrosCadastrados = [];
 
     function renderizarLivros() {
-        listaLivros.innerHTML = ''; 
+        listaLivros.innerHTML = '';
         livrosCadastrados.forEach(livro => {
             const li = document.createElement("li");
             li.textContent = `Título: ${livro.titulo} | Autor: ${livro.autor} | Categoria: ${livro.categoria}`;
@@ -39,6 +39,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const formUsuario = document.getElementById("formUsuario");
+    const listaUsuarios = document.getElementById("listaUsuarios");
+    let usuariosCadastrados = [];
+
+    function renderizarUsuarios() {
+        listaUsuarios.innerHTML = '';
+        usuariosCadastrados.forEach(usuario => {
+            const li = document.createElement("li");
+            li.textContent = `Nome: ${usuario.nome} | E-mail: ${usuario.email}`;
+            listaUsuarios.appendChild(li);
+        });
+    }
+
     if (formUsuario) {
         formUsuario.addEventListener("submit", function(event) {
             event.preventDefault();
@@ -50,8 +62,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
             
-            alert("Usuário cadastrado com sucesso!");
+            const usuario = {
+                nome,
+                email
+            };
+            
+            usuariosCadastrados.push(usuario);
+            renderizarUsuarios();
             formUsuario.reset();
+            alert("Usuário cadastrado com sucesso!");
         });
     }
 
