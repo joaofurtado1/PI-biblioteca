@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Livros</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Cadastrar Livros</h1>
+    </header>
+    
+    <main>
+        <form id="formLivro">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" required>
+            
+            <label for="autor">Autor:</label>
+            <input type="text" id="autor" required>
+            
+            <label for="categoria">Categoria:</label>
+            <input type="text" id="categoria" required>
+            
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <h2>Livros Cadastrados</h2>
+        <ul id="listaLivros"></ul>
+    </main>
+</body>
+</html>
